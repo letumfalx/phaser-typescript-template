@@ -1,0 +1,14 @@
+#!/bin/sh
+
+FILES=$(git diff --cached --name-only --diff-filter=ACMR | sed 's| |\\ |g')
+[ -z "$FILES" ] && exit 0
+
+# Prettify all selected files
+# uncomment the line with the package manager you are using, if your using bun and don't have node, use that line with bun
+echo "$FILES" | xargs bun run --bun node_modules/.bin/prettier --ignore-unknown --config=.husky/.prettierrc --write --
+# echo "$FILES" | node node_modules/.bin/prettier --ignore-unknown --config=.husky/.prettierrc --write --
+
+# Add back the modified/prettified files to staging
+echo "$FILES" | xargs git add
+
+exit 0
