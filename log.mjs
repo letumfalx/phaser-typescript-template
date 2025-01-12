@@ -5,7 +5,11 @@ import { request } from "https";
 async function main() {
   const args = process.argv.slice(2);
 
-  const { dependencies, phaserTemplateUsed } = await import("./package.json");
+  const {
+    default: { dependencies, phaserTemplateUsed },
+  } = await import("./package.json", {
+    with: { type: "json" },
+  });
 
   const event = args[0] || "unknown";
 
