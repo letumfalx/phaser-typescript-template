@@ -1,7 +1,7 @@
-import { Game, type Types } from "phaser";
+import "phaser";
 import { SCENES } from "./scenes";
 
-const config: Types.Core.GameConfig = {
+const config: Phaser.Types.Core.GameConfig = {
   type: Phaser.AUTO,
   width: 1024,
   height: 768,
@@ -14,4 +14,4 @@ const config: Types.Core.GameConfig = {
   scene: SCENES,
 };
 
-export default new Game(config);
+export default new Phaser.Game(config);
