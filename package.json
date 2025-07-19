@@ -1,0 +1,62 @@
+{
+  "name": "phaser-typescript-template",
+  "phaserTemplateUsed": "template-vite-ts",
+  "version": "0.0.0",
+  "module": "index.ts",
+  "type": "module",
+  "license": "MIT",
+  "scripts": {
+    "build": "./log.mjs build & vite build --config vite/config.prod.mjs",
+    "build-nolog": "vite build --config vite/config.prod.mjs",
+    "dev": "./log.mjs dev & vite --config vite/config.dev.mjs",
+    "dev-nolog": "vite --config vite/config.dev.mjs",
+    "eslint-check": "eslint --report-unused-disable-directives --max-warnings=0 .",
+    "eslint-fix": "eslint --report-unused-disable-directives --max-warnings=0 --fix .",
+    "lint-check": "npm-run-all eslint-check prettier-check stylelint-check typelint-check",
+    "lint-fix": "npm-run-all prettier-fix eslint-fix stylelint-fix typelint-fix",
+    "prepare": "husky",
+    "prettier-check": "prettier --check .",
+    "prettier-fix": "prettier --write .",
+    "stylelint-check": "stylelint --allow-empty-input --report-needless-disables --report-invalid-scope-disables --report-descriptionless-disables \"**/*.{css,sass,scss}\"",
+    "stylelint-fix": "stylelint  --allow-empty-input --report-needless-disables --report-invalid-scope-disables --report-descriptionless-disables --fix \"**/*.{css,sass,scss}\"",
+    "typelint-check": "tsc --noEmit",
+    "typelint-fix": "tsc --noEmit"
+  },
+  "dependencies": {
+    "phaser": "^3.88.2"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.16.0",
+    "@total-typescript/ts-reset": "^0.6.1",
+    "@types/node": "^22.14.0",
+    "@typescript-eslint/eslint-plugin": "^8.29.0",
+    "eslint": "^9.24.0",
+    "eslint-config-prettier": "^9.1.0",
+    "husky": "^9.1.7",
+    "npm-run-all2": "^7.0.2",
+    "postcss": "^8.5.3",
+    "postcss-scss": "^4.0.9",
+    "prettier": "3.4.2",
+    "prettier-plugin-jsdoc": "^1.3.2",
+    "prettier-plugin-organize-imports": "^4.1.0",
+    "stylelint": "^16.18.0",
+    "stylelint-config-standard": "^36.0.1",
+    "stylelint-config-standard-scss": "^14.0.0",
+    "stylelint-order": "^6.0.4",
+    "terser": "^5.39.0",
+    "type-fest": "^4.39.1",
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.29.0",
+    "vite": "^6.2.5",
+    "vite-tsconfig-paths": "^5.1.4"
+  },
+  "prettier": {
+    "plugins": [
+      "prettier-plugin-organize-imports",
+      "prettier-plugin-jsdoc"
+    ],
+    "endOfLine": "lf",
+    "organizeImportsSkipDestructiveCodeActions": true,
+    "trailingComma": "es5"
+  }
+}
