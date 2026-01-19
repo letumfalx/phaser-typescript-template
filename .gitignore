@@ -140,6 +140,9 @@ vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 .vite/
 
+# IDE configs
+.vscode/
+
 # --- REMOVE THIS SECTION TO COMMIT LOCK FILES ---
 bun.lock
 bun.lockb

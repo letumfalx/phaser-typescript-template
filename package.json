@@ -1,23 +1,31 @@
 {
-  "name": "project-name",
+  "name": "phaser-typescript-template",
   "type": "module",
   "private": true,
   "scripts": {
+    "build": "bun build --env='PUBLIC_*' --outdir=dist --production --splitting src/index.html",
+    "dev": "bun run --hot --env='PUBLIC_*' src/index.html",
     "format:check": "prettier --check .",
     "format:fix": "prettier --write .",
     "lint:check": "eslint .",
     "lint:fix": "eslint --fix .",
+    "prepare": "husky",
     "type:check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "phaser": "^3.90.0",
+    "tailwindcss": "^4.1.18"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.2",
     "@total-typescript/ts-reset": "^0.6.1",
+    "@types/bun": "^1.3.8",
     "eslint": "^9.39.2",
     "eslint-config-prettier": "^10.1.8",
     "husky": "^9.1.7",
     "prettier": "3.8.0",
     "prettier-plugin-jsdoc": "^1.8.0",
     "prettier-plugin-organize-imports": "^4.3.0",
-    "typescript-eslint": "^8.53.0"
+    "typescript-eslint": "^8.54.0"
   }
 }
